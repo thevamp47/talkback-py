@@ -73,9 +73,6 @@ def search_func(query, filename):
     resp = requests.post(url, headers=header, json=payload).json()
 
     for edge in resp['data']['resources']['edges']:
-        #print(f"{info}{edge['node']['title']}")
-        #print(edge['node']['url'])
-        #print('-'*100)
         data_list.append([edge['node']['createdDate'], edge['node']['title'], edge['node']['url'], edge['node']['rank']])
 
     if resp['data']['resources']['pageInfo']['hasNextPage'] == True:
@@ -163,8 +160,6 @@ Version 1.0''')
             query_builder += f', url:"{urlf}"'
         if tag is not None:
             query_builder += f', tag:"{tag}"'
-
-        ult_query = f'q:"{search}", first:{nor}, createdDateAfter:{dateafter}, createdDateBefore:{datebefore}, orderBy:{orderby}, after:{after}, type:{typef}, url:{urlf}, tag:{tag}'
 
         search_func(query_builder, output)
 

@@ -1,5 +1,7 @@
 # TalkBackpy
 
+![A fancy AI Image](assets/image.jpg)
+
 A python script that uses TalkBack API to query the website and save the results in Excel file.
 
 ## Table of Contents
